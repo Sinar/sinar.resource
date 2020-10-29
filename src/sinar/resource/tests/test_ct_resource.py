@@ -1,16 +1,12 @@
 # -*- coding: utf-8 -*-
+from plone import api
+from plone.app.testing import setRoles, TEST_USER_ID
+from plone.dexterity.interfaces import IDexterityFTI
 from sinar.resource.content.resource import IResource  # NOQA E501
 from sinar.resource.testing import SINAR_RESOURCE_INTEGRATION_TESTING  # noqa
-from plone import api
-from plone.app.testing import setRoles
-from plone.app.testing import TEST_USER_ID
-from plone.dexterity.interfaces import IDexterityFTI
-from zope.component import createObject
-from zope.component import queryUtility
+from zope.component import createObject, queryUtility
 
 import unittest
-
-
 
 
 class ResourceIntegrationTest(unittest.TestCase):

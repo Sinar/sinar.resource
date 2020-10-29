@@ -1,0 +1,13 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="sinar.resource">
+
+    <!-- -*- extra stuff goes here -*- -->
+
+    <utility
+        component=".resource_type.ResourceTypeFactory"
+        name="sinar.resource.ResourceType"
+    />
+
+
+</configure>
