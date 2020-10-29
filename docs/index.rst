@@ -1,0 +1,5 @@
+==============
+sinar.resource
+==============
+
+User documentation
