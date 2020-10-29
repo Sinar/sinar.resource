@@ -1,16 +1,19 @@
 # -*- coding: utf-8 -*-
 # from plone.app.textfield import RichText
-# from plone.autoform import directives
+from plone.autoform import directives
 from plone.dexterity.content import Container
 # from plone.namedfile import field as namedfile
 from plone.supermodel import model
 # from plone.supermodel.directives import fieldset
 # from z3c.form.browser.radio import RadioFieldWidget
-# from zope import schema
+from plone.app.z3cform.widget import RelatedItemsFieldWidget
+from z3c.relationfield.schema import RelationChoice
+from z3c.relationfield.schema import RelationList
+from plone.app.z3cform.widget import SelectFieldWidget
+from zope import schema
 from zope.interface import implementer
 
-
-# from sinar.resource import _
+from sinar.resource import _
 
 
 class IResource(model.Schema):
@@ -20,6 +23,17 @@ class IResource(model.Schema):
     # and customize it in Python:
 
     # model.load('resource.xml')
+
+    directives.widget(interest_type=SelectFieldWidget)
+    interest_type = schema.Choice(
+        title=_(u'Interest Type'),
+        description=_(u'''
+        Nature of Interest
+        '''),
+
+        required=False,
+        vocabulary='sinar.resource.ResourceType',
+    )
 
     # directives.widget(level=RadioFieldWidget)
     # level = schema.Choice(

@@ -24,8 +24,20 @@ class ResourceType(object):
         # Just an example list of content for our vocabulary,
         # this can be any static or dynamic data, a catalog result for example.
         items = [
-            VocabItem(u'sony-a7r-iii', _(u'Sony Aplha 7R III')),
-            VocabItem(u'canon-5d-iv', _(u'Canon 5D IV')),
+            VocabItem(u'activity', _(u'Activity or Event Report')),
+            VocabItem(u'application', _(u'Application or Product')),
+            VocabItem(u'books', _(u'Books')),
+            VocabItem(u'promotional',
+                      _(u'Brochure, PromotionalMaterials')),
+            VocabItem(u'data', _(u'Data, Surveys, Fact Sheets')),
+            VocabItem(u'legislation', _(u'Legislation, Regulations')),
+            VocabItem(u'media', _(u'Interview, Panel, Presentation')),
+            VocabItem(u'periodical', _(u'Newsletter, Journal')),
+            VocabItem(u'policy', _(u'Policy, Strategy or Plan')),
+            VocabItem(u'project', _(u'Project')),
+            VocabItem(u'research', _(u'Research reports, working paper')),
+            VocabItem(u'training',
+                      _(u'Training Material, Guides, Organizaing/Educational Materials')),
         ]
 
         # Fix context if you are using the vocabulary in DataGridField.

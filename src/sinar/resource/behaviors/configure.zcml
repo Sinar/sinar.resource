@@ -1,0 +1,22 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:plone="http://namespaces.plone.org/plone"
+  xmlns:zcml="http://namespaces.zope.org/zcml"
+  i18n_domain="plone">
+
+    <include package="plone.behavior" file="meta.zcml"/>
+
+    <!-- -*- extra stuff goes here -*- -->
+
+    <plone:behavior
+        name="sinar.resource.resource_type"
+        title="ResourceType"
+        description="Selection for Resource Type"
+        provides=".resource_type.IResourceType"
+        factory=".resource_type.ResourceType"
+        marker=".resource_type.IResourceTypeMarker"
+        />
+
+
+</configure>
