@@ -9,6 +9,11 @@ from zope.component import adapter
 from zope.interface import Interface
 from zope.interface import implementer
 from zope.interface import provider
+from plone.app.z3cform.widget import RelatedItemsFieldWidget
+from z3c.relationfield.schema import RelationChoice
+from z3c.relationfield.schema import RelationList
+from plone.app.z3cform.widget import SelectFieldWidget
+from plone.autoform import directives
 
 
 class IResourceTypeMarker(Interface):
@@ -20,10 +25,15 @@ class IResourceType(model.Schema):
     """
     """
 
-    project = schema.TextLine(
-        title=_(u'Project'),
-        description=_(u'Give in a project name'),
+    directives.widget(resource_type=SelectFieldWidget)
+    resource_type = schema.Choice(
+        title=_(u'Resource Type'),
+        description=_(u'''
+        
+        '''),
+
         required=False,
+        vocabulary='sinar.resource.ResourceType',
     )
 
 
@@ -34,11 +44,11 @@ class ResourceType(object):
         self.context = context
 
     @property
-    def project(self):
-        if safe_hasattr(self.context, 'project'):
-            return self.context.project
+    def resource_type(self):
+        if safe_hasattr(self.context, 'resource_type'):
+            return self.context.resource_type
         return None
 
-    @project.setter
-    def project(self, value):
-        self.context.project = value
+    @resource_type.setter
+    def resource_type(self, value):
+        self.context.resource_type = value

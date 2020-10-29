@@ -24,17 +24,6 @@ class IResource(model.Schema):
 
     # model.load('resource.xml')
 
-    directives.widget(interest_type=SelectFieldWidget)
-    interest_type = schema.Choice(
-        title=_(u'Interest Type'),
-        description=_(u'''
-        Nature of Interest
-        '''),
-
-        required=False,
-        vocabulary='sinar.resource.ResourceType',
-    )
-
     # directives.widget(level=RadioFieldWidget)
     # level = schema.Choice(
     #     title=_(u'Sponsoring Level'),
