@@ -6,6 +6,12 @@
   <configure zcml:condition="installed AccessControl.security">
   <!-- -*- extra stuff goes here -*- -->
 
+    <permission
+        id="sinar.resource.AddResource"
+        title="sinar.resource: Add Resource"
+    />
+
+
 
   </configure>
 
