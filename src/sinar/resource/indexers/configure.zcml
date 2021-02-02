@@ -6,5 +6,7 @@
 
   <include file="resource_types.zcml" />
 
+  <include file="resource_types.zcml" />
+
 
 </configure>
