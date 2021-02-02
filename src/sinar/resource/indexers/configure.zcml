@@ -1,0 +1,10 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="sinar.resource">
+
+  -*- extra stuff goes here -*-
+
+  <include file="resource_types.zcml" />
+
+
+</configure>
