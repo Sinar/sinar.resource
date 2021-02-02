@@ -26,6 +26,7 @@ class ResourceType(object):
         items = [
             VocabItem(u'activity', _(u'Activity or Event Report')),
             VocabItem(u'application', _(u'Application or Product')),
+            VocabItem(u'updates', _(u'Articles, Blogs and Updates')),
             VocabItem(u'books', _(u'Books')),
             VocabItem(u'promotional',
                       _(u'Brochure, PromotionalMaterials')),
