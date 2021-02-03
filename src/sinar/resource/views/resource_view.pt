@@ -23,7 +23,7 @@
              </p>
 
              <h3>Details</h3>
-             <div tal:content="structure context/text/output"></div>
+             <div tal:content="structure context/text/output | nothing"></div>
 
          <div tal:replace="structure provider:plone.belowcontentbody" />
 
