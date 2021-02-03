@@ -25,6 +25,16 @@
              <h3>Details</h3>
              <div tal:content="structure context/text/output | nothing"></div>
 
+          <h4>Subitems</h4>
+
+            <ul tal:repeat="item context/listFolderContents">
+                <li>
+                    <a href="" tal:attributes="href item/getURL|item/absolute_url">
+                        <span tal:replace="item/title" /></a> (<span tal:replace="item/portal_type" />)
+                </li>
+            </ul>
+
+
          <div tal:replace="structure provider:plone.belowcontentbody" />
 
     </tal:main-macro>
