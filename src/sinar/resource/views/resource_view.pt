@@ -19,8 +19,10 @@
 
          <div tal:replace="structure provider:plone.abovecontentbody" />
 
-             <p tal:content="context/resource_type">
-             </p>
+             <dl>
+                 <dt>Resource Type:</dt>
+                 <dd tal:content="view/resource_type_title"></dd>
+             </dl>
 
              <h3>Details</h3>
              <div tal:content="structure context/text/output | nothing"></div>
