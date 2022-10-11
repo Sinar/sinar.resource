@@ -24,10 +24,9 @@
                  <dd tal:content="view/resource_type_title"></dd>
              </dl>
 
-             <h3>Details</h3>
              <div tal:content="structure context/text/output | nothing"></div>
 
-          <h4>Subitems</h4>
+          <h4>Attachments</h4>
 
             <ul tal:repeat="item context/listFolderContents">
                 <li>
