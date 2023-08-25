@@ -32,15 +32,14 @@ class ResourceType(object):
                       _(u'Brochure, Promotional Materials')),
             VocabItem(u'data', _(u'Data, Surveys, Fact Sheets')),
             VocabItem(u'legislation', _(u'Legislation, Regulations')),
-            VocabItem(u'media', _(u'Interview, Panel, Presentation')),
+            VocabItem(u'media', _(u'News Article, Interview, Panel, Presentation')),
             VocabItem(u'periodical', _(u'Newsletter, Journal')),
             VocabItem(u'policy', _(u'Policy, Strategy or Plan')),
             VocabItem(u'pressstatement',
                     _(u'Press Statement or News Release')),
-            VocabItem(u'project', _(u'Project')),
             VocabItem(u'research', _(u'Research Reports, Working Paper')),
             VocabItem(u'training',
-                      _(u'Training Material, Guides, Organizaing/Educational Materials')),
+                      _(u'Training Material, Guides, Organizing/Educational Materials')),
         ]
 
         # Fix context if you are using the vocabulary in DataGridField.
