@@ -18,7 +18,7 @@
                 </a></td>
             <td tal:content="python:toLocalizedTime(obj.effective())"></td>
             <td tal:content="obj/description"></td>
-            <td><dl tal:repeat="link view/cited_by_links">
+            <td><dl tal:repeat="link python:view.cited_by_links(obj)">
                     <dt tal:replace="link/title" />
                     <dd>
                         <a tal:attributes="href link/remoteUrl"

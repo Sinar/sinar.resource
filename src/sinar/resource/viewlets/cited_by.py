@@ -24,21 +24,17 @@ class CitedBy(ViewletBase):
         return api_relations.backrelations(self.context,
                                            attribute="cites")
 
-    def cited_by_links(self):
+    def cited_by_links(self, obj):
         "Get Links for objects that link to this item"
-
-        citations = api_relations.backrelations(self.context)
 
         links = []
 
-        for cited in citations:
-            context = cited
-            brains = api.content.find(context=context, depth=1,
-                                           portal_type='Link')
+        brains = api.content.find(context=obj, depth=1,
+                                 portal_type='Link')
 
-            for brain in brains:
-                obj = brain.getObject()
-                links.append(obj)
+        for brain in brains:
+            link_obj = brain.getObject()
+            links.append(link_obj)
 
         return links
 
