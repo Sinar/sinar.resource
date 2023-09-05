@@ -1,3 +1,31 @@
-<div class="days_to_conf">
-    ${view/message}
+<div tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime"
+     tal:condition="view/cited_by | nothing">
+    <h4>Citations</h4>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Name of publication</th>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Link(s)</th>
+        </tr>
+        <tr tal:repeat="obj view/cited_by">
+            <td tal:on-error=""
+                tal:content="python:
+                view.resource_type_title(obj.resource_type)" ></td>
+            <td><a tal:attributes="href obj/absolute_url"
+                   tal:content="obj/title">
+                </a></td>
+            <td tal:content="python:toLocalizedTime(obj.effective())"></td>
+            <td tal:content="obj/description"></td>
+            <td><dl tal:repeat="link view/cited_by_links">
+                    <dt tal:replace="link/title" />
+                    <dd>
+                        <a tal:attributes="href link/remoteUrl"
+                        tal:content="link/remoteUrl" />
+                    </dd>
+                </dl>
+            </td>
+        </tr>
+    </table>
 </div>
