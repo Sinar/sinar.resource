@@ -7,6 +7,16 @@
  <!-- -*- extra stuff goes here -*- -->
 
   <browser:viewlet
+     name="cites"
+     for="plone.app.contenttypes.interfaces.IDocument"
+     manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+     layer="sinar.resource.interfaces.ISinarResourceLayer"
+     class=".cites.Cites"
+     template="cites.pt"
+     permission="zope2.View"
+     />
+
+  <browser:viewlet
      name="cited-by"
      for="plone.app.contenttypes.interfaces.IDocument"
      manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
