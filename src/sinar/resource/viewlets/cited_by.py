@@ -21,7 +21,8 @@ class CitedBy(ViewletBase):
 
     def cited_by(self):
         "Get objects that link to this item"
-        return api_relations.backrelations(self.context)
+        return api_relations.backrelations(self.context,
+                                           attribute="cites")
 
     def cited_by_links(self):
         "Get Links for objects that link to this item"
