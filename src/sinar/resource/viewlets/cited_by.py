@@ -30,6 +30,8 @@ class CitedBy(ViewletBase):
         links = []
 
         brains = api.content.find(context=obj, depth=1,
+                                 sort_on='effective',
+                                 sort_order='descending',
                                  portal_type='Link')
 
         for brain in brains:
