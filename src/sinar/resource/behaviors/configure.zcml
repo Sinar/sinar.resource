@@ -10,6 +10,16 @@
     <!-- -*- extra stuff goes here -*- -->
 
     <plone:behavior
+        name="sinar.resource.cites"
+        title="Cites"
+        description="Resource that cites an item"
+        provides=".cites.ICites"
+        factory=".cites.Cites"
+        marker=".cites.ICitesMarker"
+        />
+
+
+    <plone:behavior
         name="sinar.resource.cited_by"
         title="CitedBy"
         description="Resources that cite this item."
