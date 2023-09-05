@@ -20,9 +20,15 @@ class CitedBy(ViewletBase):
         return term.title
 
     def cited_by(self):
-        "Get objects that link to this item"
-        return api_relations.backrelations(self.context,
-                                           attribute="cites")
+        """Get objects that link to this item, sort by effective date
+           reversed.
+        """
+        citations = api_relations.backrelations(self.context,
+                                                attribute="cites")
+
+        citations.sort(key=lambda x: x.effective(), reverse=True)
+
+        return citations
 
     def cited_by_links(self, obj):
         "Get Links for objects that link to this item"
@@ -30,8 +36,6 @@ class CitedBy(ViewletBase):
         links = []
 
         brains = api.content.find(context=obj, depth=1,
-                                 sort_on='effective',
-                                 sort_order='descending',
                                  portal_type='Link')
 
         for brain in brains:
