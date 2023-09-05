@@ -18,17 +18,6 @@
         marker=".cites.ICitesMarker"
         />
 
-
-    <plone:behavior
-        name="sinar.resource.cited_by"
-        title="CitedBy"
-        description="Resources that cite this item."
-        provides=".cited_by.ICitedBy"
-        factory=".cited_by.CitedBy"
-        marker=".cited_by.ICitedByMarker"
-        />
-
-
     <plone:behavior
         name="sinar.resource.resource_type"
         title="ResourceType"
