@@ -8,8 +8,8 @@
 
   <browser:viewlet
      name="cites"
-     for="plone.app.contenttypes.interfaces.IDocument"
-     manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+     for="sinar.resource.content.resource.IResource"
+     manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
      layer="sinar.resource.interfaces.ISinarResourceLayer"
      class=".cites.Cites"
      template="cites.pt"
@@ -36,6 +36,15 @@
      permission="zope2.View"
      />
 
+  <browser:viewlet
+     name="cited-by"
+     for="sinar.activity.content.activity.IActivity"
+     manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+     layer="sinar.resource.interfaces.ISinarResourceLayer"
+     class=".cited_by.CitedBy"
+     template="cited-by.pt"
+     permission="zope2.View"
+     />
 
 
 </configure>

@@ -1,5 +1,7 @@
 <div tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime"
      tal:condition="view/cited_by | nothing">
+    
+    <hr />
     <h4>Citations</h4>
     <table>
         <tr>

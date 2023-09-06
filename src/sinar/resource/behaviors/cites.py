@@ -44,7 +44,7 @@ class ICites(model.Schema):
         value_type=RelationChoice(
             source=CatalogSource(portal_type=[
                                  'Project',
-                                 'Activity (Event)',
+                                 'Activity',
                                  'Resource',
                                  ]
                                  ),

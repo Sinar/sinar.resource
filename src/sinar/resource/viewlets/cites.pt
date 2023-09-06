@@ -1,3 +1,25 @@
-<div class="days_to_conf">
-    ${view/message}
+<div tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime"
+     tal:condition="view/cites| nothing">
+
+     <hr />
+     <h4>Citations</h4>
+
+     <table>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Type</th>
+        </tr>
+        <tr tal:repeat="obj view/cites">
+            <td><a tal:attributes="href obj/absolute_url"
+                   tal:content="obj/title">
+                </a>
+            </td>
+            <td tal:content="obj/description"></td>
+            <td tal:content="python:toLocalizedTime(obj.effective())"></td>
+            <td tal:content="obj/Type"></td>
+        </tr>
+    </table>
+
 </div>
