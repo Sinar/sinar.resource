@@ -30,6 +30,8 @@ class ResourceType(object):
             VocabItem(u'books', _(u'Books')),
             VocabItem(u'promotional',
                       _(u'Brochure, Promotional Materials')),
+            VocabItem(u'project_report',
+                      _(u'Project or Organization Reports')),
             VocabItem(u'data', _(u'Data, Surveys, Fact Sheets')),
             VocabItem(u'legislation', _(u'Legislation, Regulations')),
             VocabItem(u'media_article', _(u'News Article')),
