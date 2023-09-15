@@ -10,6 +10,16 @@
     <!-- -*- extra stuff goes here -*- -->
 
     <plone:behavior
+        name="sinar.resource.output_of"
+        title="OutputOf"
+        description="Project or Activity that this item is an output of"
+        provides=".output_of.IOutputOf"
+        factory=".output_of.OutputOf"
+        marker=".output_of.IOutputOfMarker"
+        />
+
+
+    <plone:behavior
         name="sinar.resource.cites"
         title="Cites"
         description="Resource that cites an item"
