@@ -10,6 +10,7 @@
             <th>Description</th>
             <th>Date</th>
             <th>Type</th>
+            <th>Link</th>
         </tr>
         <tr tal:repeat="obj view/cites">
             <td><a tal:attributes="href obj/absolute_url"
@@ -19,6 +20,18 @@
             <td tal:content="obj/description"></td>
             <td tal:content="python:toLocalizedTime(obj.effective())"></td>
             <td tal:content="obj/Type"></td>
+            <td>
+                <dl>
+                    <dd tal:condition="python:obj.Type()=='Resource'"
+                        tal:repeat="item obj/listFolderContents">
+                        <a tal:condition="python:item.Type()=='Link'"
+                           tal:attributes="href item/remoteUrl"
+                           tal:content="item/remoteUrl">
+                        </a>
+                    </dd>
+                </dl>
+            </td>
+
         </tr>
     </table>
 
