@@ -21,13 +21,20 @@
             <td tal:content="python:toLocalizedTime(obj.effective())"></td>
             <td tal:content="obj/description"></td>
             <td><dl tal:repeat="link python:view.cited_by_links(obj)">
-                    <dt tal:replace="link/title" />
-                    <dd>
-                        <a tal:attributes="href link/remoteUrl"
-                        tal:content="link/remoteUrl" />
+                    <dd tal:condition="python:link.Type()=='Link'">
+                        <a  tal:attributes="href link/remoteUrl"
+                            tal:content="link/title"></a> 
                     </dd>
+                    <dd tal:condition="python:link.Type()=='File'">
+                        <a  tal:attributes="href link/absolute_url"
+                            tal:content="link/title"></a> 
+                    </dd>
+
                 </dl>
             </td>
         </tr>
     </table>
 </div>
+
+
+

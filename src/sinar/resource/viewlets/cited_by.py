@@ -36,7 +36,8 @@ class CitedBy(ViewletBase):
         links = []
 
         brains = api.content.find(context=obj, depth=1,
-                                  portal_type='Link')
+                                  portal_type=['Link',
+                                               'File'])
 
         for brain in brains:
             link_obj = brain.getObject()
