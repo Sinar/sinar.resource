@@ -2,7 +2,7 @@
      tal:condition="view/cites| nothing">
 
      <hr />
-     <h4>Citations</h4>
+     <h4>Bibiliography</h4>
 
      <table>
         <tr>
