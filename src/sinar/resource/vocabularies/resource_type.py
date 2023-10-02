@@ -33,6 +33,7 @@ class ResourceType(object):
             VocabItem(u'project_report',
                       _(u'Project or Organization Reports')),
             VocabItem(u'data', _(u'Data, Surveys, Fact Sheets')),
+            VocabItem(u'legal', _(u'Legal Documents, Filings, Judgements')),
             VocabItem(u'legislation', _(u'Legislation, Regulations')),
             VocabItem(u'media_article', _(u'News Article')),
             VocabItem(u'media_video', _(u'News Video')),
