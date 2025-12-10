@@ -43,7 +43,6 @@ class IOutputOf(model.Schema):
         default=[],
         value_type=RelationChoice(
             source=CatalogSource(portal_type=[
-                                 'Project',
                                  'Activity',
                                  'ProjectActivity',
                                  ]
