@@ -12,17 +12,17 @@
         tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
 
          <div tal:replace="structure provider:plone.abovecontenttitle" />
-            <h1 class="documentFirstHeading" tal:content="context/title" />
+
+             <span class="badge text-bg-secondary" tal:content="view/resource_type_title | nothing"></span>
+             <h1 class="documentFirstHeading">
+                 <span tal:replace="context/title">Title</span>
+                              </h1>
+
 
          <div tal:replace="structure provider:plone.belowcontenttitle" />
              <p class="lead" tal:content="context/description" />
 
          <div tal:replace="structure provider:plone.abovecontentbody" />
-
-             <dl>
-                 <dt>Resource Type:</dt>
-                 <dd tal:content="view/resource_type_title | nothing"></dd>
-             </dl>
 
              <div tal:content="structure context/text/output | nothing"></div>
 

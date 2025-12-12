@@ -19,12 +19,18 @@ class ResourceView(DefaultView):
                              'sinar.resource.ResourceType')
 
         vocabulary = factory(self)
-        if self.context.resource_type:
+        try: 
             term = vocabulary.getTerm(self.context.resource_type)
             return term.title
-        else:
+
+        except KeyError:
             return None
 
+        except Exception as e:
+            # Catch any other specific exception raised by getTerm or term.title access
+            # e.g., print(f"Error retrieving term: {e}")
+            print(f"Error retrieving term: {e}")
+            return None
 
     def __call__(self):
         # Implement your own actions:
