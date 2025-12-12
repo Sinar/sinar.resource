@@ -21,7 +21,7 @@
 
              <dl>
                  <dt>Resource Type:</dt>
-                 <dd tal:content="view/resource_type_title"></dd>
+                 <dd tal:content="view/resource_type_title | nothing"></dd>
              </dl>
 
              <div tal:content="structure context/text/output | nothing"></div>
