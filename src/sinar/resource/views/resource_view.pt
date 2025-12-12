@@ -36,7 +36,8 @@
                                    aria-expanded="false"
                                    aria-controls="collapseAttachments"
                                    tal:condition="python:len(context.getFolderContents())>0">
-                                   Click for list of attachments
+                                   Click for list of items attached to
+                                   this Resource
                                 </a>
                              </div>
 
