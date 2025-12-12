@@ -26,15 +26,45 @@
 
              <div tal:content="structure context/text/output | nothing"></div>
 
-          <h4>Attachments</h4>
+             <div class="container">
+                 <div class="row">
+                     <div class="col-md-6">
+                         <div class="row" tal:condition="python: checkPermission('Modify portal content', context)">
+                             <div class="d-inline-flex gap-1">
+                                <a class="btn btn-primary" data-bs-toggle="collapse"
+                                   href="#collapseAttachments" role="button"
+                                   aria-expanded="false"
+                                   aria-controls="collapseAttachments"
+                                   tal:condition="python:len(context.getFolderContents())>0">
+                                   Click for list of attachments
+                                </a>
+                             </div>
 
-            <ul tal:repeat="item context/listFolderContents">
-                <li>
-                    <a href="" tal:attributes="href item/getURL|item/absolute_url">
-                        <span tal:replace="item/title" /></a> (<span tal:replace="item/portal_type" />)
-                </li>
-            </ul>
-
+                             <div class="collapse" id="collapseAttachments"
+                                   tal:condition="python:len(context.getFolderContents())>0">
+                                   <table class="table table-sm table-bordered table-striped">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">Attachment Name</th>
+                                        <th scope="col">Type</th>
+                                      </tr>
+                                    </thead>
+                                  <tbody>
+                                      <tr tal:repeat="item context/listFolderContents">
+                                        <td><a href="" tal:attributes="href item/getURL|item/absolute_url">
+                                                <span tal:replace="item/title" /></a> 
+                                        </td>
+                                        <td>
+                                            <span tal:replace="item/portal_type" />
+                                        </td>
+                                      </tr>
+                                  </tbody>
+                                  </table>
+                                  </div>
+                                </div>
+                     </div>
+                 </div>
+             </div>
 
          <div tal:replace="structure provider:plone.belowcontentbody" />
 
