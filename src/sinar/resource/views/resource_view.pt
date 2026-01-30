@@ -24,10 +24,10 @@
 
          <div tal:replace="structure provider:plone.abovecontentbody" />
 
-             <div tal:content="structure context/text/output | nothing"></div>
-
-
          <div tal:replace="structure provider:plone.belowcontentbody" />
+
+          <div tal:content="structure context/text/output | nothing"></div>
+
 
            <table class="table table-sm table-bordered table-striped"
                   tal:condition="python: len(context.listFolderContents()) > 0">
