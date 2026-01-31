@@ -24,8 +24,6 @@
 
          <div tal:replace="structure provider:plone.abovecontentbody" />
 
-         <div tal:replace="structure provider:plone.belowcontentbody" />
-
           <div tal:content="structure context/text/output | nothing"></div>
 
 
@@ -48,6 +46,8 @@
               </tr>
           </tbody>
           </table>
+
+         <div tal:replace="structure provider:plone.belowcontentbody" />
 
     </tal:main-macro>
 </metal:main>
