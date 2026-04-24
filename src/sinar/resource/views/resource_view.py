@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from plone.dexterity.browser.view import DefaultView
-
 from zope.component import getUtility
 from zope.schema.interfaces import IVocabularyFactory
 

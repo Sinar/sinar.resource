@@ -5,7 +5,6 @@ from plone.app.z3cform.widget import RelatedItemsFieldWidget
 from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
-
 from Products.CMFPlone.utils import safe_hasattr
 from sinar.resource import _
 from z3c.relationfield.schema import RelationChoice, RelationList
