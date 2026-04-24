@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from plone.dexterity.browser.view import DefaultView
-from sinar.resource import _
+
 from zope.component import getUtility
 from zope.schema.interfaces import IVocabularyFactory
+
 
 # from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
@@ -19,7 +20,7 @@ class ResourceView(DefaultView):
                              'sinar.resource.ResourceType')
 
         vocabulary = factory(self)
-        try: 
+        try:
             term = vocabulary.getTerm(self.context.resource_type)
             return term.title
 

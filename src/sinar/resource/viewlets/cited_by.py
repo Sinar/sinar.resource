@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 
-from plone.app.layout.viewlets import ViewletBase
 from collective.relationhelpers import api as api_relations
 from plone import api
+from plone.app.layout.viewlets import ViewletBase
 from zope.component import getUtility
 from zope.schema.interfaces import IVocabularyFactory
 
 
 class CitedBy(ViewletBase):
 
-    def resource_type_title(self,value):
+    def resource_type_title(self, value):
 
         factory = getUtility(IVocabularyFactory,
                              'sinar.resource.ResourceType')

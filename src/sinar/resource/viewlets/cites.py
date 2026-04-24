@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from plone.app.layout.viewlets import ViewletBase
 from collective.relationhelpers import api
+from plone.app.layout.viewlets import ViewletBase
+
 
 class Cites(ViewletBase):
-
 
     def cites(self):
         """Get objects that this item cites, sort by effective date

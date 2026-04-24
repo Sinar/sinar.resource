@@ -79,7 +79,7 @@ class ResourceIntegrationTest(unittest.TestCase):
             self.portal,
             'resource_id',
             title='Resource container',
-         )
+        )
         self.parent = self.portal[parent_id]
         obj = api.content.create(
             container=self.parent,

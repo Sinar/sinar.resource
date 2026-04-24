@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-from plone.app.testing import setRoles
-from plone.app.testing import TEST_USER_ID
-from sinar.resource.testing import SINAR_RESOURCE_FUNCTIONAL_TESTING
-from sinar.resource.testing import SINAR_RESOURCE_INTEGRATION_TESTING
+from plone.app.testing import setRoles, TEST_USER_ID
+from sinar.resource.testing import (
+    SINAR_RESOURCE_FUNCTIONAL_TESTING,
+    SINAR_RESOURCE_INTEGRATION_TESTING,
+)
 
 import unittest
 
@@ -17,6 +18,7 @@ class IndexerIntegrationTest(unittest.TestCase):
 
     def test_dummy(self):
         self.assertTrue(True)
+
 
 class IndexerFunctionalTest(unittest.TestCase):
 

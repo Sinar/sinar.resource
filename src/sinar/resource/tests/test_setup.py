@@ -33,9 +33,8 @@ class TestSetup(unittest.TestCase):
 
     def test_browserlayer(self):
         """Test that ISinarResourceLayer is registered."""
-        from sinar.resource.interfaces import (
-            ISinarResourceLayer)
         from plone.browserlayer import utils
+        from sinar.resource.interfaces import ISinarResourceLayer
         self.assertIn(
             ISinarResourceLayer,
             utils.registered_layers())
@@ -63,9 +62,8 @@ class TestUninstall(unittest.TestCase):
 
     def test_browserlayer_removed(self):
         """Test that ISinarResourceLayer is removed."""
-        from sinar.resource.interfaces import \
-            ISinarResourceLayer
         from plone.browserlayer import utils
+        from sinar.resource.interfaces import ISinarResourceLayer
         self.assertNotIn(
             ISinarResourceLayer,
             utils.registered_layers())
