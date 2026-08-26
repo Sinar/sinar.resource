@@ -6,7 +6,7 @@ from sinar.resource.testing import (
     SINAR_RESOURCE_INTEGRATION_TESTING,
 )
 from zope.component import getMultiAdapter
-from zope.component.interfaces import ComponentLookupError
+from zope.interface.interfaces import ComponentLookupError
 
 import unittest
 
